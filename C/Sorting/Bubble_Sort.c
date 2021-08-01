@@ -28,10 +28,18 @@ void bubbleSort(int nums[], int size) {
 
     for(int step = 0; step < size; step++) {
 
+        int swapped = 0;
+
         for(int i = 0; i < size - step - 1; i++) {
 
-            if(nums[i] > nums[i + 1]) swap(&nums[ i ], &nums[ i + 1 ]);
-        }        
+            if(nums[i] > nums[i + 1]) {
+                
+                swap(&nums[ i ], &nums[ i + 1 ]);
+                swapped = 1;
+            }
+        }
+
+        if(swapped == 0) break;        
     }
 }
 
